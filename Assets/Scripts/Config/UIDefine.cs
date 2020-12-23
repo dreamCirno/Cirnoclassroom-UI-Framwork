@@ -1,19 +1,17 @@
-﻿using UnityEngine;
-
-namespace Cirnoclassroom.UI {
+﻿namespace Cirnoclassroom.UI {
     /// <summary>
     /// 用于框架定义常量、全局性方法、枚举类型、委托定义
     /// </summary>
-    public class UIDefine : MonoBehaviour {
+    public class UIDefine {
 
         #region Variables
 
         #region Enum
 
         /// <summary>
-        /// 面板类型
+        /// 面板显示类型
         /// </summary>
-        public enum PanelType {
+        public enum TransformType {
             /// <summary>
             /// 普通
             /// </summary>
@@ -29,9 +27,9 @@ namespace Cirnoclassroom.UI {
         }
 
         /// <summary>
-        /// 面板显示方式
+        /// 面板显示模式
         /// </summary>
-        public enum PanelDisplayMode {
+        public enum DisplayMode {
             /// <summary>
             /// 正常显示面板
             /// </summary>
@@ -49,7 +47,7 @@ namespace Cirnoclassroom.UI {
         /// <summary>
         /// 面板透明度类型
         /// </summary>
-        public enum PanelAlphaType {
+        public enum AlphaType {
             /// <summary>
             /// 完全透明，不可穿透
             /// </summary>
@@ -69,24 +67,6 @@ namespace Cirnoclassroom.UI {
         }
 
         #endregion
-
-        #endregion
-
-        #region MainMethods
-
-        void Start() {
-
-        }
-
-        void Update() {
-
-        }
-
-        #endregion
-
-        #region HelperMethods
-
-
 
         #endregion
 

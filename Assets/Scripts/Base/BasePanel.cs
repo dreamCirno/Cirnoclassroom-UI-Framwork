@@ -8,7 +8,20 @@ namespace Cirnoclassroom.UI {
 
         #region Variables
 
+        #region Public
 
+        public PanelType CurrentPanelType {
+            get => currentPanelType;
+            set => currentPanelType = value;
+        }
+
+        #endregion
+
+        #region Private
+
+        private PanelType currentPanelType = new PanelType();
+
+        #endregion
 
         #endregion
 
