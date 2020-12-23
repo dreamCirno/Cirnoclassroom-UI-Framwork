@@ -1,0 +1,34 @@
+using UnityEngine;
+
+namespace Cirnoclassroom.UI {
+    /// <summary>
+    /// 这个人很懒，连功能说明都不写呢
+    /// </summary>
+    public class #SCRIPTNAME# : MonoBehaviour {
+
+        #region Variables
+
+
+
+        #endregion
+
+        #region MainMethods
+
+        void Start() {
+            
+        }
+
+        void Update() {
+            
+        }
+
+        #endregion
+
+        #region HelperMethods
+
+
+
+        #endregion
+
+    }
+}
