@@ -20,7 +20,7 @@ namespace Cirnoclassroom.UI {
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
                 ScriptableObject.CreateInstance<CreateScriptAction>(),
                 GetSelectedPathOrFallback() + CIRNOCLASSROOM_SCRIPT_DEFAULT_FILENAME,
-                null, GetFileFullName(CIRNOCLASSROOM_SCRIPT_LOCATE));
+                null, FileUtil.GetFileFullName(CIRNOCLASSROOM_SCRIPT_LOCATE));
         }
 
         /// <summary>
@@ -44,14 +44,6 @@ namespace Cirnoclassroom.UI {
             }
 
             return selectedPath;
-        }
-
-        public static string GetFileFullName(string filename) {
-            DirectoryInfo di = new DirectoryInfo(Application.dataPath);
-            foreach (var fi in di.GetFiles(filename, SearchOption.AllDirectories)) {
-                return fi.FullName;
-            }
-            return default;
         }
 
         /// <summary>
