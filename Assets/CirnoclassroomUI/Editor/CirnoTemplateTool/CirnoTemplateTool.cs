@@ -12,16 +12,15 @@ namespace Cirnoclassroom.UI {
     /// </summary>
     public class CirnoTemplateTool : MonoBehaviour {
 
-        private const string SCRIPT_TEMPLATE_LOCATE = "Assets/Editor/CirnoTemplateTool/ScriptTemplates/";
         private const string CIRNOCLASSROOM_SCRIPT_LOCATE = "99-C# Script-NewCirnoclassroomScript.cs.txt";
-        private const string CRINOCLASSROOM_SCRIPT_DEFAULT_FILENAME = "/NewCirnoclassroomScript.cs";
+        private const string CIRNOCLASSROOM_SCRIPT_DEFAULT_FILENAME = "/NewCirnoclassroomScript.cs";
 
         [MenuItem("Assets/Create/Cirnoclassroom/Template Script", false, 99)]
         private static void CreateCirnoclassroomTemplateScript() {
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
                 ScriptableObject.CreateInstance<CreateScriptAction>(),
-                GetSelectedPathOrFallback() + CRINOCLASSROOM_SCRIPT_DEFAULT_FILENAME,
-                null, SCRIPT_TEMPLATE_LOCATE + CIRNOCLASSROOM_SCRIPT_LOCATE);
+                GetSelectedPathOrFallback() + CIRNOCLASSROOM_SCRIPT_DEFAULT_FILENAME,
+                null, GetFileFullName(CIRNOCLASSROOM_SCRIPT_LOCATE));
         }
 
         /// <summary>
@@ -45,6 +44,14 @@ namespace Cirnoclassroom.UI {
             }
 
             return selectedPath;
+        }
+
+        public static string GetFileFullName(string filename) {
+            DirectoryInfo di = new DirectoryInfo(Application.dataPath);
+            foreach (var fi in di.GetFiles(filename, SearchOption.AllDirectories)) {
+                return fi.FullName;
+            }
+            return default;
         }
 
         /// <summary>
